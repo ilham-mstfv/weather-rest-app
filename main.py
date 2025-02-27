@@ -17,10 +17,10 @@ URL = config.get_app_url()
 
 
 @app.get("/weather")
-async def get_weather(place: WeatherRequest) -> WeatherResponse:
+async def get_weather(request: WeatherRequest) -> WeatherResponse:
 
     weatherApiService = WeatherApiService(api_key=KEY, base_url=URL)
-    return await weatherApiService.get_weather(place)
+    return await weatherApiService.get_weather(request)
 
 
 # можно сделать автотесты, используя библиотеку, автотесты в последнюю очередь
