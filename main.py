@@ -15,12 +15,11 @@ app = FastAPI()
 KEY = config.get_app_key()
 URL = config.get_app_url()
 
-weatherApiService = WeatherApiService(api_key=KEY, base_url=URL)
-
 
 @app.get("/weather")
 async def get_weather(place: WeatherRequest) -> WeatherResponse:
 
+    weatherApiService = WeatherApiService(api_key=KEY, base_url=URL)
     return await weatherApiService.get_weather(place)
 
 
