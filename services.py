@@ -8,7 +8,6 @@ from models import WeatherRequest, WeatherResponse
 
 class WeatherApiService:
 
-    ## Class Methods ##
     def __init__(self, api_key: str, base_url: str) -> None:
         self.api_key = api_key
         self.base_url = base_url
